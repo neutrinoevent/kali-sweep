@@ -37,7 +37,8 @@ scp kali-sweep_3.2.1-1.deb target-host:/tmp/
 sudo dpkg -i /tmp/kali-sweep_3.2.1-1.deb
 
 # 3. Verify
-sudo /root/verify_install.sh  # Or run checks manually
+kali-sweep --version  # Basic sanity check
+sudo systemctl status kali-sweep.timer --no-pager || true  # If packaged
 
 # 4. Configure
 sudo vim /etc/kali-sweep.conf
@@ -309,41 +310,12 @@ sudo systemctl restart rsyslog
 grep "kali-sweep" /var/log/syslog | grep "risk="
 ```
 
-### Central Webhook Collector
+### Central Webhook Collector (Example)
 
-Deploy a simple webhook receiver:
-
-```python
-# webhook_collector.py
-from flask import Flask, request
-import json
-import datetime
-
-app = Flask(__name__)
-
-@app.route('/hook', methods=['POST'])
-def receive():
-    data = request.json
-    timestamp = datetime.datetime.now().isoformat()
-    
-    # Log to file
-    with open('kali-sweep-alerts.jsonl', 'a') as f:
-        record = {'timestamp': timestamp, 'data': data}
-        f.write(json.dumps(record) + '\n')
-    
-    # Check risk score
-    risk = data.get('risk_score', 0)
-    if risk >= 50:
-        # Alert via Slack/PagerDuty/etc
-        send_alert(data)
-    
-    return {'status': 'ok'}, 200
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
-```
+If you want webhook ingestion, deploy **any** HTTPS endpoint that can accept a JSON POST and store/forward it to your SIEM (Elastic/Loki/Splunk/etc.). Keep it authenticated (mTLS or a signed token) and rate-limited.
 
 Configure all hosts:
+
 ```bash
 # /etc/kali-sweep.conf
 WEBHOOK_URL="http://collector.example.com:8080/hook"

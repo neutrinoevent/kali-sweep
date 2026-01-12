@@ -248,18 +248,35 @@ sudo cp -a "$LATEST" "/root/incidents/$INCIDENT_ID/"
 sudo tar czf "/root/incidents/${INCIDENT_ID}.tar.gz" -C "$LATEST" .
 
 # Document timeline
-cat > "/root/incidents/$INCIDENT_ID/timeline.txt" <<EOF
-Incident ID: $INCIDENT_ID
-Detection time: $(date)
-Risk score: <score-from-summary>
-Containment actions:
-- <list-what-you-did>
+cat > "/root/incidents/$INCIDENT_ID/timeline.txt" <<'EOF'
+Incident ID: <fill>
+Detection time: <fill>
+Hostname: <fill>
+Risk score: <fill>
 
-Root cause analysis:
-- <TBD>
+What triggered the alert:
+- <fill>
 
-Remediation:
-- <TBD>
+Containment actions taken:
+- <fill>
+
+Evidence preserved:
+- kali-sweep report directory (copied)
+- journal excerpts
+- process/network snapshots
+
+Initial assessment:
+- suspected vector: <fill>
+- suspected persistence: <fill>
+- suspected C2/egress: <fill>
+
+Remediation performed:
+- <fill>
+
+Follow-up tasks:
+- rotate credentials/keys
+- patch/upgrade packages
+- re-baseline after clean state is confirmed
 EOF
 ```
 
@@ -410,15 +427,14 @@ sudo kali-sweep --paranoid --compare /root/kali-baseline
 
 ```
 Project Contact:    alerts@example.invalid
-On-call SOC:      +1-555-xxx-xxxx
 Incident Manager: incident-mgr@example.com
 ```
 
 ### External Resources
 
-- SANS Incident Handlers Diary: https://isc.sans.edu/
-- Kali Forums: https://forums.kali.org/
-- r/AskNetsec: https://reddit.com/r/AskNetsec
+- Incident response playbooks (SANS/NIST)
+- Kali/Debian admin references
+- Internal SOC runbooks and SIEM dashboards
 
 ---
 

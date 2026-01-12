@@ -14,7 +14,7 @@ wget https://github.com/neutrinoevent/kali-sweep/releases/latest/download/kali-s
 sudo dpkg -i kali-sweep_3.2.1-1.deb
 
 # Verify
-kali-sweep --version
+sudo kali-sweep --version
 ```
 
 ---

@@ -8,6 +8,9 @@
 
 Collects structured telemetry, performs light disruption/hardening, supports baseline/diff workflows, and emits summary outputs.
 
+> Note: This public repo intentionally excludes internal build/publish scripts; release assets are provided via GitHub Releases.
+
+
 **Author:** Alexander Nichols, Old Dominion University  
 **License:** GPLv3
 
