@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icon_black.png" width="180" alt="kali-sweep logo">
+  <img src="icon.png" width="180" alt="kali-sweep logo">
 </p>
 
 # kali-sweep
