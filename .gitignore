@@ -63,3 +63,15 @@ test-*.log
 *.bak
 *.swp
 .tarignore
+
+# Build / release artifacts (do not commit)
+staging/
+release-*/
+*.deb
+*.tar.gz
+*.sha256
+SHA256SUMS.txt
+
+# Local scratch / backups
+*.original-*
+*.fixed-*

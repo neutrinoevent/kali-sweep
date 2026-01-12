@@ -426,7 +426,7 @@ sudo kali-sweep --paranoid --compare /root/kali-baseline
 ### Escalation Contacts
 
 ```
-Project Contact:    alerts@example.invalid
+Project Contact:	alerts@example.invalid
 Incident Manager: incident-mgr@example.com
 ```
 
