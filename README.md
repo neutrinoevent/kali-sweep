@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="icon_black.png" width="180" alt="kali-sweep logo">
+</p>
+
 # kali-sweep
 
 **Defensive security sweep for Kali Linux**
