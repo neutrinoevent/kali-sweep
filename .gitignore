@@ -47,3 +47,19 @@ kali-sweep-audit.tar.gz
 !QUICK_START.md
 !TESTING_GUIDE.md
 !DELIVERY_SUMMARY.md
+
+# Build artifacts / release outputs
+staging/
+release-*/
+*.deb
+*.tar.gz
+SHA256SUMS*.txt
+test-results-*/
+test-*.log
+
+# Local scratch / backups
+*.fixed-*
+*.original-*
+*.bak
+*.swp
+.tarignore
