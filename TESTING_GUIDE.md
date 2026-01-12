@@ -3,7 +3,7 @@
 
 **Purpose:** Repeatable checks to confirm kali-sweep is installed correctly, runs safely, and produces the expected outputs.
 
-This guide is written to match the **public repo contents** and avoids references to private/internal tooling.
+This guide is written to match the **public repo contents**.
 
 ---
 
@@ -170,7 +170,10 @@ echo "exit=$?"
 
 ---
 
-## 9) Minimal acceptance checklist (release readiness)
+If you're installing this on a new box, here's a quick sanity checklist to confirm everything behaves as expected...
+
+
+## 9) Quick sanity checklist (recommended)
 
 - [ ] `kali-sweep --version` reports `3.2.1`
 - [ ] `sudo kali-sweep --dry-run --verbose` completes without error
