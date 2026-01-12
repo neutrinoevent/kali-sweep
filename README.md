@@ -79,6 +79,21 @@ SYSLOG=1
 
 ---
 
+## Contributing & Feedback
+
+kali-sweep is an open-source defensive tool, and thoughtful contributions are welcome.
+
+If you:
+- have ideas for additional detection checks,
+- want to improve documentation or usability,
+- spot edge cases, false positives, or portability issues,
+
+please feel free to open an issue or reach out on GitHub. Even lightweight feedback is appreciated.
+
+The project is intentionally somewhat conservative in scope; suggestions that improve clarity, reliability, or defensive value are especially encouraged.
+
+---
+
 ## License
 
 GPLv3 – see LICENSE.
