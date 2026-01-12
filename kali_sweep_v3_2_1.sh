@@ -776,10 +776,10 @@ END_MEM_MB="$(free -m 2>/dev/null | awk '/^Mem:/{print $3}' || echo 0)"
 RUNTIME_S="$((END_EPOCH - START_EPOCH))"
 MEM_DELTA_MB="$((END_MEM_MB - START_MEM_MB))"
 
-SUS_PROC_COUNT="$(wc -l < "$PROC/suspicious_process_patterns.txt" 2>/dev/null || echo 0)"
-RECENT_EXEC_COUNT="$(wc -l < "$FSYS/recent_exec_system.txt" 2>/dev/null || echo 0)"
-RECENT_HOME_COUNT="$(wc -l < "$FSYS/recent_home_files_top3000.txt" 2>/dev/null || echo 0)"
-UNCOMMON_EST_COUNT="$(wc -l < "$NET/established_uncommon_ports.txt" 2>/dev/null || echo 0)"
+SUS_PROC_COUNT="$([ -f "$PROC/suspicious_process_patterns.txt" ] && wc -l < "$PROC/suspicious_process_patterns.txt" || echo 0)"
+RECENT_EXEC_COUNT="$([ -f "$FSYS/recent_exec_system.txt" ] && wc -l < "$FSYS/recent_exec_system.txt" || echo 0)"
+RECENT_HOME_COUNT="$([ -f "$FSYS/recent_home_files_top3000.txt" ] && wc -l < "$FSYS/recent_home_files_top3000.txt" || echo 0)"
+UNCOMMON_EST_COUNT="$([ -f "$NET/established_uncommon_ports.txt" ] && wc -l < "$NET/established_uncommon_ports.txt" || echo 0)"
 DIFF_NONEMPTY_COUNT="$(find "$DIFF" -type f -size +0c 2>/dev/null | wc -l || echo 0)"
 
 RISK_SCORE=0
