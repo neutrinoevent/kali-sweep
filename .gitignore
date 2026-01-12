@@ -1,0 +1,49 @@
+# kali-sweep .gitignore
+
+# Build artifacts
+staging/
+release-*/
+*.deb
+*.tar.gz
+*.zip
+
+# Test results
+test-results-*/
+test-*.log
+
+# Backup files
+backup/
+*.backup
+*.bak
+*~
+
+# Temporary files
+*.tmp
+*.swp
+.*.swp
+
+# Generated files
+audit-report.txt
+*.manifest
+SHA256SUMS.txt
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# Log files
+*.log
+
+# Archives (except release artifacts)
+kali-sweep-COMPLETE.tar.gz
+kali-sweep-audit.tar.gz
+
+# Keep these files (exceptions)
+!QUICK_START.md
+!TESTING_GUIDE.md
+!DELIVERY_SUMMARY.md
